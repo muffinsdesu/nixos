@@ -32,6 +32,10 @@
     # Pick only one of the below networking options.
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
     # networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    
+    # Use IWD instead
+    # wireless.iwd.enable = true; # conflicts with wireless.enable
+    # networkmanager.wifi.backend = "iwd";
 
     # Configure network proxy if necessary
     # proxy = {
