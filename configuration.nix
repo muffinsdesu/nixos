@@ -64,8 +64,8 @@
   	  layout = "us";
   	  xkbOptions = "workman";
 
-      # Enable touchpad support (Laptops).
-      # libinput.enable = true;
+      	  # Enable touchpad support (Laptops).
+          # libinput.enable = true;
       
 	  # KDE Plasma  
   	  displayManager.sddm.enable = true;
@@ -73,9 +73,8 @@
   	};
   };
 
-  # Exclude unwanted  default KDE packages
+  # Exclude unwanted default KDE packages
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    elisa
     gwenview
     okular
     oxygen
@@ -84,8 +83,9 @@
     plasma-browser-integration
     print-manager
   ];
+
   # Enable sound.
-  # sound.enable = true;
+  sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -95,8 +95,7 @@
     initialPassword = "123";
   };
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # system profile packages
   environment.systemPackages = with pkgs; [
   alacritty
   brave
@@ -107,11 +106,15 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
+  programs = {
+    mtr.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+  };
+
+  # Firewall related 
   networking.firewall = {
     # enable = false; # disable firewall
   	# firewall.allowedTCPPorts = [ ... ];
@@ -119,8 +122,7 @@
   };
   
   # Copy the NixOS configuration file and link it from the resulting system
-  # (/run/current-system/configuration.nix). This is useful in case you
-  # accidentally delete configuration.nix.
+  # (/run/current-system/configuration.nix).
   # system.copySystemConfiguration = true;
 
   # This value determines the NixOS release from which the default
