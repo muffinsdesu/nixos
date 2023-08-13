@@ -21,7 +21,7 @@
        efiSupport = true;
        useOSProber = true;
        #efiInstallAsRemovable = true; # in case canTouchEfiVariables doesn't work for your system
-       device = "nodev";
+       device = "nodev"; # EFI only
        configurationLimit = 5;
     };
   };
@@ -66,21 +66,21 @@
     # openssh.enable = true;
 
     # X11 things 
-  	xserver = {
-  	  # Enable X11
-  	  enable = true;
+    xserver = {
+    # Enable X11
+      enable = true;
 
-  	  # Keymap
-  	  layout = "us";
-  	  xkbOptions = "workman";
+    # Keymap
+      layout = "us";
+      xkbOptions = "workman";
 
-      	  # Enable touchpad support (Laptops).
-          # libinput.enable = true;
+    # Enable touchpad support (Laptops).
+      # libinput.enable = true;
       
-	  # KDE Plasma  
-  	  displayManager.sddm.enable = true;
-  	  desktopManager.plasma5.enable = true;	
-  	};
+    # KDE Plasma  
+      displayManager.sddm.enable = true;
+      desktopManager.plasma5.enable = true;	
+    };
   };
 
   # Exclude unwanted default KDE packages
