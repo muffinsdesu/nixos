@@ -69,7 +69,7 @@
     xserver = {
     # Enable X11
       enable = true;
-
+      excludePackages = with pkgs; [xterm];
     # Keymap
       layout = "us";
       xkbOptions = "workman";
@@ -85,6 +85,7 @@
 
   # Exclude unwanted default KDE packages
   environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+    ark
     gwenview
     okular
     oxygen
