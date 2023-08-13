@@ -107,13 +107,16 @@
   };
 
   # system profile packages
-  environment.systemPackages = with pkgs; [
-  alacritty
-  brave
-  nixos-grub2-theme
-  librewolf
-  micro
-  ];
+  environment = {
+    shells = with pkgs; [ zsh ][
+    systemPackages = with pkgs; [
+      alacritty
+      brave
+      nixos-grub2-theme
+      librewolf
+      micro
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
