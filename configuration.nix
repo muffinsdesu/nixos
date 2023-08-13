@@ -26,18 +26,28 @@
     };
   };
   
+  networking = {
+    hostName = "nixos"; # Define your hostname.
 
-  # networking.hostName = "nixos"; # Define your hostname.
-  # Pick only one of the below networking options.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+    # Pick only one of the below networking options.
+    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+    # networkmanager.enable = true;  # Easiest to use and most distros use this by default.
+
+    # Configure network proxy if necessary
+    # proxy = {
+      # proxy.default = "http://user:password@proxy:port/";
+      # noProxy = "127.0.0.1,localhost,internal.domain";
+    # };
+    # firewall = {
+      # enable = false; # disable firewall
+      # firewall.allowedTCPPorts = [ ... ];
+      # allowedUDPPorts = [ ... ];
+    # };
+  }; 
+  
 
   # Set your time zone.
    time.timeZone = "US/Chicago";
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -112,13 +122,6 @@
       enable = true;
       enableSSHSupport = true;
     };
-  };
-
-  # Firewall related 
-  networking.firewall = {
-    # enable = false; # disable firewall
-  	# firewall.allowedTCPPorts = [ ... ];
-  	# allowedUDPPorts = [ ... ];
   };
   
   # Copy the NixOS configuration file and link it from the resulting system
