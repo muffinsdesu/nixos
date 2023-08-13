@@ -60,10 +60,10 @@
   # Services
   services = {
     # Enable CUPS to print documents.
-    # services.printing.enable = true;
+    # printing.enable = true;
 
     # Enable the OpenSSH daemon.
-    # services.openssh.enable = true;
+    # openssh.enable = true;
 
     # X11 things 
   	xserver = {
