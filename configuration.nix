@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ./home-kris.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -108,14 +109,7 @@
       pulse.enable = true;
     };
   };
-
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.kris = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    initialPassword = "123";
-  };
-
+ 
   # system profile packages
   environment = {
     shells = with pkgs; [ zsh ][
@@ -130,15 +124,20 @@
     ];
   };
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs = {
-    # mtr.enable = true;
-    # gnupg.agent = {
-      # enable = true;
-      # enableSSHSupport = true;
-    # };
-  # };
+  # Some programs need SUID wrappers, can be configured further or are started in user sessions.
+  programs = {
+    zsh.enable = true;
+  };
+
+  # Make zsh default shell
+  users.defaultUserShell = pkgs.zsh;
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.kris = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    initialPassword = "123";
+  };
   
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix).
