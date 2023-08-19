@@ -112,14 +112,13 @@
  
   # system profile packages
   environment = {
-    shells = with pkgs; [ zsh ][
+    shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
       alacritty
       brave
       nixos-grub2-theme
       librewolf
       micro
-      pulse-pa
       sof-firmware
     ];
   };
