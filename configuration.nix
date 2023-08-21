@@ -121,7 +121,11 @@
 
   # Some programs need SUID wrappers, can be configured further or are started in user sessions.
   programs = {
-    zsh.enable = true;
+    zsh = {
+      enable = true;
+      autosuggestions.enable = true;
+      syntaxHighlighting.enable = true;
+    };
   };
 
   # Make zsh default shell
