@@ -73,7 +73,7 @@
       excludePackages = with pkgs; [xterm];
     # Keymap
       layout = "us";
-      xkbOptions = "workman";
+      xkbVariant = "workman";
 
     # Enable touchpad support (Laptops).
       # libinput.enable = true;
