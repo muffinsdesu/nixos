@@ -24,9 +24,7 @@ in
   	    ];
       programs = {
   	    zsh = {
-  	      enable = true;
-  	      autosuggestions.enable = true;
-  	      syntaxHighlighting.enable = true;	
+          dotDir = ".config/zsh";
   	      };
       };
   	  };     
