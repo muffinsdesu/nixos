@@ -21,9 +21,10 @@ in
       programs = {
   	    zsh = {
           dotDir = ".config/zsh";
-  	      };
+  	    };
       };
+      
   	  };     
-  	}; 
+    }; 
   };
 }
