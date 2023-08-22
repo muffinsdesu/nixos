@@ -115,7 +115,7 @@
       nixos-grub2-theme
       librewolf
       micro
-      sof-firmware
+      sof-firmware # Modern laptops may require this
     ];
   };
 
@@ -128,14 +128,14 @@
     };
   };
 
-  # Make zsh default shell
+  # Make zsh default shell for users
   users.defaultUserShell = pkgs.zsh;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
+  # Define a user account
   users.users.kris = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    initialPassword = "123";
+    initialPassword = "123"; # Don't forget to set a password with ‘passwd’
   };
   
   # Copy the NixOS configuration file and link it from the resulting system
