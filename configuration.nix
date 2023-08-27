@@ -91,21 +91,21 @@
       pulse.enable = true;
     };
   };
-
-  # Exclude unwanted default KDE packages
-  environment.plasma5.excludePackages = with pkgs.libsForQt5; [
-    ark
-    gwenview
-    okular
-    oxygen
-    khelpcenter
-    konsole
-    plasma-browser-integration
-    print-manager
-  ];
  
   # system profile packages
   environment = {
+    # Exclude unwanted default KDE packages
+    plasma5.excludePackages = with pkgs.libsForQt5; [
+      ark
+      gwenview
+      okular
+      oxygen
+      khelpcenter
+      konsole
+      plasma-browser-integration
+      print-manager
+    ];
+
     shells = with pkgs; [ zsh ];
     systemPackages = with pkgs; [
       alacritty
