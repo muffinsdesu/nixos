@@ -19,9 +19,9 @@ in
   	    packages = with pkgs; [
   	    	btop
   	    ];
-        packages = with aagl-gtk-on-nix; [
-          aagl-gtk-on-nix.anime-game-launcher
-          aagl-gtk-on-nix.honkers-railway-launcher
+          packages = with aagl-gtk-on-nix; [
+            aagl-gtk-on-nix.anime-game-launcher
+            aagl-gtk-on-nix.honkers-railway-launcher
         ];
       programs = {
   	    zsh = {
