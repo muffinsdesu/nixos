@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let
   home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-23.05.tar.gz";
+  aagl-gtk-on-nix = import (builtins.fetchTarball "https://github.com/ezKEa/aagl-gtk-on-nix/archive/main.tar.gz");
 in
 {
   imports = [
@@ -18,12 +19,16 @@ in
   	    packages = with pkgs; [
   	    	btop
   	    ];
+        packages = with aagl-gtk-on-nix; [
+          aagl-gtk-on-nix.anime-game-launcher
+          aagl-gtk-on-nix.honkers-railway-launcher
+        ];
       programs = {
   	    zsh = {
           dotDir = ".config/zsh";
         };
       };
-      
+
   	  };     
     }; 
   };
