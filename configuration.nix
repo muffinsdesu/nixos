@@ -103,6 +103,7 @@
       khelpcenter
       konsole
       plasma-browser-integration
+      libsForQt5.polkit-kde-agent
       print-manager
     ];
 
