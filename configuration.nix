@@ -82,6 +82,14 @@
       displayManager.sddm.enable = true;
       desktopManager.plasma5.enable = true;	
     };
+
+    # Sound related things
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
   };
 
   # Exclude unwanted default KDE packages
@@ -95,16 +103,6 @@
     plasma-browser-integration
     print-manager
   ];
-
-  services = {
-    # Sound related things
-    pipewire = {
-      enable = true;
-      alsa.enable = true;
-      alsa.support32Bit = true;
-      pulse.enable = true;
-    };
-  };
  
   # system profile packages
   environment = {
