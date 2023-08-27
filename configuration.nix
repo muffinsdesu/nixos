@@ -103,7 +103,6 @@
       khelpcenter
       konsole
       plasma-browser-integration
-      libsForQt5.polkit-kde-agent
       print-manager
     ];
 
@@ -113,6 +112,8 @@
       brave
       nixos-grub2-theme
       librewolf
+      libsForQt5.polkit-kde-agent
+      libsForQt5.xdg-desktop-portal-kde
       micro
       sof-firmware # Modern laptops may require this
     ];
