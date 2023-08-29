@@ -108,18 +108,14 @@
 
     shells = with pkgs; [ zsh ];
     # KDE packages
-    systemPackages = with pkgs.libsForQt5; [
-      sddm-kcm
-      polkit-kde-agent
-      xdg-desktop-portal-kde
-    ];
-
-    # Non-KDE Packages
     systemPackages = with pkgs; [
       alacritty
       brave
-      nixos-grub2-theme
       librewolf
+      libsForQt5.sddm-kcm
+      libsForQt5.polkit-kde-agent
+      libsForQt5.xdg-desktop-portal-kde
+      nixos-grub2-theme
       micro
       sof-firmware # Modern laptops may require this
     ];
