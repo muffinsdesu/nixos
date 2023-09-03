@@ -21,7 +21,6 @@ in
   	    
   	    packages = with pkgs; [
   	    	aagl-gtk-on-nix.anime-game-launcher
-          aagl-gtk-on-nix.anime-game.launcher
   	    	btop
   	    ];
   	  };
