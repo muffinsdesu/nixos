@@ -7,7 +7,6 @@ in
   imports = [
     (import "${home-manager}/nixos")
   ];
-  
   home-manager = {
   	useGlobalPkgs = true;
   	useUserPackages = true;
@@ -15,21 +14,31 @@ in
   	  /* The home.stateVersion option does not have a default and must be set */
   	  home = {
   	    stateVersion = "23.05";
-        # Packages
+  	    keyboard = {
+  	      layout = "us";
+  	      variant = "workman"; # Not working?
+  	    };
+  	    
   	    packages = with pkgs; [
-					aagl-gtk-on-nix.anime-game-launcher
-					aagl-gtk-on-nix.honkers-railway-launcher
+  	    	aagl-gtk-on-nix.anime-game-launcher
+          aagl-gtk-on-nix.anime-game.launcher
   	    	btop
   	    ];
-          
-      programs = {
-  	    zsh = {
-					enable = true;
-					dotDir = ".config/zsh";
-				};
-      };
-
-  	  };     
-    }; 
+  	  };
+  	  programs = {
+  	     zsh = {
+  	       enable = true;
+  	       dotDir = ".config/zsh";
+  	       history = {
+  	       	path = "$ZDOTDIR/.history";
+  	       	save = 1000;
+  	       };
+  	       initExtra = ''
+  	         unsetopt nomatch
+  	       '';	
+  	     };
+  	  };
+  	       
+  	}; 
   };
 }
