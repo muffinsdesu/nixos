@@ -17,8 +17,8 @@ in
   	    stateVersion = "23.05";
         # Packages
   	    packages = with pkgs; [
-    aagl-gtk-on-nix.anime-game-launcher
-    aagl-gtk-on-nix.honkers-railway-launcher
+					aagl-gtk-on-nix.anime-game-launcher
+					aagl-gtk-on-nix.honkers-railway-launcher
   	    	btop
   	    ];
           
