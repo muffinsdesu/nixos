@@ -29,13 +29,16 @@ in
   	       enable = true;
   	       dotDir = ".config/zsh";
   	       history = {
-  	       	path = "$ZDOTDIR/.history";
-  	       	save = 1000;
+  	         path = "$ZDOTDIR/.history";
+  	       	 save = 1000;
   	       };
   	       initExtra = ''
   	         unsetopt nomatch
-  	       '';	
-  	     };
+  	       '';
+           shellAliases = {
+             nbs = "nixos-rebuild switch";
+             
+  	       };
   	  };
   	       
   	}; 
