@@ -58,6 +58,26 @@
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
 
+  # Nix settings
+  nix = {
+    settings = {
+      # Enable flakes and new 'nix' command
+      # experimental-features = "nix-command flakes";
+      # Deduplicate and optimize nix store
+      auto-optimise-store = true;
+    };
+
+    gc = {
+      automatic = true;
+      persistent = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    };
+  };
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Services
   services = {
     # Enable CUPS to print documents.
